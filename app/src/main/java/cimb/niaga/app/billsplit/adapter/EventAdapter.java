@@ -25,7 +25,8 @@ public class EventAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return HomeFragment.list_bill.size();
+//        return HomeFragment.list_b?ill.size();
+        return 0;
     }
 
     @Override
@@ -55,8 +56,8 @@ public class EventAdapter extends BaseAdapter {
         holder.txt_bill            = (TextView) convertView.findViewById(R.id.txt_bill);
         holder.txt_totalprice    = (TextView) convertView.findViewById(R.id.txt_totalprice);
 
-        holder.txt_bill.setText(HomeFragment.list_bill.get(position));
-        holder.txt_totalprice.setText(HomeFragment.list_price.get(position));
+//        holder.txt_bill.setText(HomeFragment.list_bill.get(position));
+//        holder.txt_totalprice.setText(HomeFragment.list_price.get(position));
 
 
         convertView.setTag(holder);
