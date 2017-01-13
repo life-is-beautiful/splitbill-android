@@ -8,7 +8,7 @@
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#176183"
+        android:background="@color/colorPrimaryDark"
         style="@style/MyCustomTabLayout"
         app:tabMode="fixed"
         app:tabGravity="fill" />

@@ -4,24 +4,42 @@
     android:layout_height="fill_parent"
     android:padding="15dp">
 
-    <RelativeLayout
-        android:id="@+id/total_owed_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/round_rect_shape_owing"
-        android:padding="20dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        >
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#fff"
-            android:id="@+id/txt_total_owing"
-            android:text="Total Owing : Rp 450.000,00"/>
-    </RelativeLayout>
+            android:textColor="@color/cardview_dark_background"
+            android:id="@+id/total_owed"
+            android:text="Total Owing:"
+            android:textStyle="normal|bold|italic"
+            android:textAllCaps="false"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif" />
+
+        <RelativeLayout
+            android:id="@+id/total_owed_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_rect_shape_owing"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:id="@+id/txt_total_owing"
+                android:text="Rp 450.000,00"/>
+
+        </RelativeLayout>
+    </LinearLayout>
 
     <ListView
         android:id="@+id/listEventOwing"
-        android:layout_below="@+id/total_owed_layout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:fadeScrollbars="true"
@@ -46,4 +64,5 @@
         android:textSize="14sp"
         android:layout_centerInParent="true"
         android:visibility="visible"/>
+
 </RelativeLayout>
