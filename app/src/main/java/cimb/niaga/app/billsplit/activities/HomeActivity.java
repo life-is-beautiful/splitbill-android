@@ -1,6 +1,6 @@
 package cimb.niaga.app.billsplit.activities;
 
-import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -116,7 +116,11 @@ public class HomeActivity extends AppCompatActivity {
         findViewById(R.id.fab_sheet_item_recording).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplication(), "Add New Bill", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplication(), "Add New Bill", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(HomeActivity.this, CameraActivity.class);
+                Toast.makeText(getApplication(), "Opening Camera..", Toast.LENGTH_LONG).show();
+                startActivity(i);
+                // finish();
             }
         });
         findViewById(R.id.fab_sheet_item_reminder).setOnClickListener(new View.OnClickListener() {
@@ -125,6 +129,8 @@ public class HomeActivity extends AppCompatActivity {
                 Toast.makeText(getApplication(), "Settings", Toast.LENGTH_LONG).show();
             }
         });
+//        findViewById(R.id.fab_sheet_item_photo).setOnClickListener(this);
+//        findViewById(R.id.fab_sheet_item_note).setOnClickListener(this);
     }
 
     private void setStatusBarColor(int color) {
