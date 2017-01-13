@@ -125,8 +125,6 @@ public class HomeActivity extends AppCompatActivity {
                 Toast.makeText(getApplication(), "Settings", Toast.LENGTH_LONG).show();
             }
         });
-//        findViewById(R.id.fab_sheet_item_photo).setOnClickListener(this);
-//        findViewById(R.id.fab_sheet_item_note).setOnClickListener(this);
     }
 
     private void setStatusBarColor(int color) {

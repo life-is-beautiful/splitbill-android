@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="15dp">
+
+    <RelativeLayout
+        android:id="@+id/total_owed_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_rect_shape_owing"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:id="@+id/txt_total_owing"
+            android:text="Total Owing : Rp 450.000,00"/>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listEventOwing"
+        android:layout_below="@+id/total_owed_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fadeScrollbars="true"
+        android:fastScrollEnabled="true"
+        android:dividerHeight="1dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"/>
+
+    <ProgressBar
+        android:id="@+id/prgLoading"
+        style="@android:style/Widget.ProgressBar.Inverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/txtAlert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- No Data -"
+        android:textColor="#000"
+        android:textSize="14sp"
+        android:layout_centerInParent="true"
+        android:visibility="visible"/>
+</RelativeLayout>
