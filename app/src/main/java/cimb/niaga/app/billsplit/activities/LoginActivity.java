@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,6 +29,9 @@ public class LoginActivity extends AppCompatActivity {
         phone = (EditText) findViewById(R.id.input_phone);
         email = (EditText) findViewById(R.id.input_email);
         submit_btn = (Button) findViewById(R.id.btn_submit);
+
+        //set next enter
+        nickname.setImeOptions(EditorInfo.IME_ACTION_NEXT);
 
         submit_btn.setOnClickListener(new View.OnClickListener() {
             @Override
