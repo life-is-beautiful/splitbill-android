@@ -35,18 +35,26 @@
                 android:text="Rp 450.000,00"/>
 
         </RelativeLayout>
-    </LinearLayout>
 
-    <ListView
-        android:id="@+id/listEvent"
-        android:layout_below="@+id/total_owed_layout"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:fadeScrollbars="true"
-        android:fastScrollEnabled="true"
-        android:dividerHeight="1dp"
-        android:layout_marginTop="10dp"
-        android:visibility="gone"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/cardview_dark_background"
+            android:id="@+id/total_owed_detail"
+            android:text="Detail Owed:"
+            android:textStyle="normal|bold|italic"
+            android:textAllCaps="false"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listEvent"
+            android:fadeScrollbars="true"
+            android:fastScrollEnabled="true" />
+
+    </LinearLayout>
 
     <ProgressBar
         android:id="@+id/prgLoading"

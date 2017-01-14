@@ -126,7 +126,10 @@ public class HomeActivity extends AppCompatActivity {
         findViewById(R.id.fab_sheet_item_reminder).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplication(), "Settings", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplication(), "Settings", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(HomeActivity.this, SummaryActivity.class);
+                Toast.makeText(getApplication(), "Creating Bill..", Toast.LENGTH_LONG).show();
+                startActivity(i);
             }
         });
 //        findViewById(R.id.fab_sheet_item_photo).setOnClickListener(this);
