@@ -57,9 +57,12 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_help:
-                return true;
+                Intent i = new Intent(HomeActivity.this, SummaryActivity.class);
+                Toast.makeText(getApplication(), "Creating Bill..", Toast.LENGTH_LONG).show();
+                startActivity(i);
             case R.id.action_logout:
-                return true;
+                finish();
+                System.exit(0);
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -127,7 +130,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(getApplication(), "Settings", Toast.LENGTH_LONG).show();
-                Intent i = new Intent(HomeActivity.this, SummaryActivity.class);
+                Intent i = new Intent(HomeActivity.this, OCRActivity.class);
                 Toast.makeText(getApplication(), "Creating Bill..", Toast.LENGTH_LONG).show();
                 startActivity(i);
             }
