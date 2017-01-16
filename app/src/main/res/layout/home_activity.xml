@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="fill_parent"
     android:layout_width="fill_parent"
     android:fillViewport="true">
@@ -16,7 +17,10 @@
         style="@style/Widget.MaterialSheetFab.Fab"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:tint="#ffffff"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:rippleColor="?attr/colorBackgroundFloating" />
 
     <!-- Overlay that dims the screen -->
     <com.gordonwong.materialsheetfab.DimOverlayFrameLayout
@@ -43,15 +47,15 @@
                 android:orientation="vertical"
                 android:background="@color/darkgray">
 
-                <!-- Recording -->
+                <!-- Capture -->
                 <TextView
                     android:id="@+id/fab_sheet_item_recording"
                     style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
-                    android:drawableLeft="@mipmap/ic_mic_grey600_24dp"
-                    android:drawableStart="@mipmap/ic_mic_grey600_24dp"
-                    android:text="Add New Bill" />
+                    android:drawableLeft="@mipmap/ic_photo_camera_grey600_24dp"
+                    android:drawableStart="@mipmap/ic_photo_camera_grey600_24dp"
+                    android:text="Capture Bill" />
 
-                <!-- Reminder -->
+                <!-- Settings -->
                 <TextView
                     android:id="@+id/fab_sheet_item_reminder"
                     style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
