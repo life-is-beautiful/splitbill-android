@@ -16,6 +16,7 @@ import com.gordonwong.materialsheetfab.MaterialSheetFabEventListener;
 
 import cimb.niaga.app.billsplit.R;
 import cimb.niaga.app.billsplit.corecycle.Fab;
+import cimb.niaga.app.billsplit.fragment.CameraFragment;
 import cimb.niaga.app.billsplit.fragment.HomeFragment;
 
 /**
@@ -47,26 +48,26 @@ public class HomeActivity extends AppCompatActivity {
         setupFab();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_help:
-                Intent i = new Intent(HomeActivity.this, SummaryActivity.class);
-                Toast.makeText(getApplication(), "Creating Bill..", Toast.LENGTH_LONG).show();
-                startActivity(i);
-            case R.id.action_logout:
-                finish();
-                System.exit(0);
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_main, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case R.id.action_help:
+//                Intent i = new Intent(HomeActivity.this, SummaryActivity.class);
+//                Toast.makeText(getApplication(), "Creating Bill..", Toast.LENGTH_LONG).show();
+//                startActivity(i);
+//            case R.id.action_logout:
+//                finish();
+//                System.exit(0);
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//    }
 
     public void switchContent(Fragment mFragment, String fragName, Boolean isBackstack) {
 
@@ -120,10 +121,20 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(getApplication(), "Add New Bill", Toast.LENGTH_LONG).show();
-                Intent i = new Intent(HomeActivity.this, CameraActivity.class);
-                Toast.makeText(getApplication(), "Opening Camera..", Toast.LENGTH_LONG).show();
-                startActivity(i);
+//                Intent i = new Intent(HomeActivity.this, CameraActivity.class);
+//                Toast.makeText(getApplication(), "Opening Camera..", Toast.LENGTH_LONG).show();
+//                startActivity(i);
                 // finish();
+
+                Toast.makeText(getApplication(), "Opening Camera..", Toast.LENGTH_LONG).show();
+
+                CameraFragment camera = new CameraFragment();
+                fragmentManager = getSupportFragmentManager();
+                android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.content, camera);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                materialSheetFab.hideSheet();
             }
         });
         findViewById(R.id.fab_sheet_item_reminder).setOnClickListener(new View.OnClickListener() {

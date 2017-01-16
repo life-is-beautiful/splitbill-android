@@ -91,6 +91,7 @@ public class FragmentOwed extends Fragment {
                         listEvent.setVisibility(View.VISIBLE);
                         listEvent.setAdapter(owedAdapter);
                     } else {
+                        prgLoading.setVisibility(View.GONE);
                         txtAlert.setVisibility(View.VISIBLE);
                     }
                 } catch (JSONException e) {
@@ -101,6 +102,8 @@ public class FragmentOwed extends Fragment {
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 Log.d("denny", "failed");
+                prgLoading.setVisibility(View.GONE);
+                txtAlert.setVisibility(View.VISIBLE);
             }
         });
     }

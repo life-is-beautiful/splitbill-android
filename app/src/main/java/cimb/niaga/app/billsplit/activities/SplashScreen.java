@@ -54,27 +54,27 @@ public class SplashScreen extends AppCompatActivity {
         deviceID = telephonyManager.getDeviceId();
         Log.d("denny", deviceID);
 
-        testHit();
+        checkAuth();
 
 
-        TimerTask task = new TimerTask() {
-
-            @Override
-            public void run() {
-
-                // go to the main activity
-                Intent nextActivity = new Intent(SplashScreen.this, LoginActivity.class);
-                startActivity(nextActivity);
-
-                // make sure splash screen activity is gone
-                SplashScreen.this.finish();
-
-
-            }
-
-        };
-
-        new Timer().schedule(task, 4000);
+//        TimerTask task = new TimerTask() {
+//
+//            @Override
+//            public void run() {
+//
+//                // go to the main activity
+//                Intent nextActivity = new Intent(SplashScreen.this, LoginActivity.class);
+//                startActivity(nextActivity);
+//
+//                // make sure splash screen activity is gone
+//                SplashScreen.this.finish();
+//
+//
+//            }
+//
+//        };
+//
+//        new Timer().schedule(task, 4000);
     }
 
     private void StartAnimations() {
@@ -98,19 +98,44 @@ public class SplashScreen extends AppCompatActivity {
         iv_niaga.startAnimation(fadein);
     }
 
-    public void testHit() {
+    public void checkAuth() {
         RequestParams params = new RequestParams();
-        params.put("title", "denny");
-        params.put("content", "test");
-        params.put("id", "0");
+        params.put("device", deviceID);
         AsyncHttpClient client = new AsyncHttpClient();
         client.setSSLSocketFactory(MySSLSocketFactory.getFixedSocketFactory());
         client.setTimeout(MyAPIClient.HTTP_DEFAULT_TIMEOUT);
 
-        client.post(MyAPIClient.LINK_TEST, params, new JsonHttpResponseHandler() {
+        client.post(MyAPIClient.LINK_CHECKDEVICE, params, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 Log.d("denny", response.toString());
+
+                try {
+                    JSONObject object = response;
+
+                    String error_code = object.getString("errorCode");
+
+                    if(error_code.equals("00"))
+                    {
+                        // go to the main activity
+                        Intent nextActivity = new Intent(SplashScreen.this, HomeActivity.class);
+                        startActivity(nextActivity);
+
+                        // make sure splash screen activity is gone
+                        SplashScreen.this.finish();
+                    }
+                    else
+                    {
+                        // go to the main activity
+                        Intent nextActivity = new Intent(SplashScreen.this, LoginActivity.class);
+                        startActivity(nextActivity);
+
+                        // make sure splash screen activity is gone
+                        SplashScreen.this.finish();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
 
             @Override
