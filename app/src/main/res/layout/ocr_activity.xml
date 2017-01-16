@@ -38,7 +38,8 @@
                 android:layout_width="144dp"
                 android:layout_height="298dp"
                 fbutton:srcCompat="@drawable/bills"
-                android:id="@+id/imageBill" />
+                android:id="@+id/imageBill"
+                android:layout_weight="0.66" />
 
             <LinearLayout
                 android:id="@+id/linearlogin2"
