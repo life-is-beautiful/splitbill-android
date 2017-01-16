@@ -64,11 +64,6 @@ public class LoginActivity extends AppCompatActivity {
 
     public void nextActivity()
     {
-        Intent i = new Intent(LoginActivity.this, HomeActivity.class);
-        Toast.makeText(getApplication(), "Success", Toast.LENGTH_LONG).show();
-        startActivity(i);
-        finish();
-
         dialog = new SpotsDialog(LoginActivity.this, R.style.LoginDialog);
         dialog.show();
         RequestParams params = new RequestParams();
